@@ -5,12 +5,12 @@ myTree = ['a', # 根节点
             ['e', [], []]
         ],
         ['c', # 右子树
-        ['f' [], []],
+        ['f', [], []],
             []
         ]
         ]
 #%% class 节点与引用
-def BinaryTree(r):
+def binaryTree(r):
     return [r, [], []]
 
 def insertLeft(tree, newBranch):
@@ -73,7 +73,7 @@ class BinaryTree:
 # %%解析树
 # 1.栈实现
 from stack import Stack
-from trees import BinaryTree
+
 def buildParseTree(fpexp):
     fplist = fpexp.split()
     pStack = Stack()
