@@ -9,7 +9,7 @@ myTree = ['a', # 根节点
             []
         ]
         ]
-#%% class 节点与引用
+
 def binaryTree(r):
     return [r, [], []]
 
@@ -40,7 +40,8 @@ def getLeftChild(root):
 
 def getRightChild(root):
     return root[2]
-# %%
+
+#%% class 节点与引用
 class BinaryTree:
     def __init__(self, rootObj):
         self.key = rootObj
