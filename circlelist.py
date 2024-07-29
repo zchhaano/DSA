@@ -55,15 +55,28 @@ print(commands)
 # %%
 print(original_string)
 print(orientation)
+def solveSpin(steps):
+    print ('bloking the cube')
+    if steps >2:   
+        print ('rotate base left')
+    else:
+        for _ in range(steps):
+            print ('rotate base right')   
+
 for command in commands:
     char = command[0]  # Get the character part of the command
     print(command)
     if char in orientation:
         position = orientation.index(char)   # Find the position (1-based index)
         if position == 9:
-            print ('spinCube',command[1])
+            solveSpin(int(command[1]))
         elif position in [5, 7]:
-            print ('spinCube left if 7, right if 5, then rollCube, then spinCube',command[1])
+            direction = 'right' if position == 5 else 'left'
+            spinCube(direction,orientation)
+            rollCube(orientation)
+            solveSpin(int(command[1]))
         elif position in [1, 4, 6]:
-            print(f'rollCube till {char} in position 9')
+            while orientation.index(char) !=9:
+                rollCube(orientation)
+            solveSpin(int(command[1]))
 # %%
